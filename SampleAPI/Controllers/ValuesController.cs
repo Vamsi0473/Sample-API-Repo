@@ -20,7 +20,14 @@ namespace SampleAPI.Controllers
         [HttpGet("v1/data")]
         public ActionResult<string> Get(int id)
         {
-            return Cities.ToArray()[id];
+             var request = Request.Headers["Authorization"];
+            if (request == "token")
+            {
+                return "Authorization header is validated";
+            }
+            else {
+                return "Requires authorization header";
+            }
         }
     }
 }
