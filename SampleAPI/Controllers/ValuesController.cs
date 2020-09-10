@@ -20,14 +20,14 @@ namespace SampleAPI.Controllers
         [HttpGet("v1/data")]
         public ActionResult<string> Get(int id)
         {
-             var request = Request.Headers["Authorization"];
-           // if (request == "token")
-           // {
-                return token;
-            //}
-           // else {
-              //  return "Requires authorization header";
-           // }
+             string request = Request.Headers["Authorization"];
+           if (request !=" ")
+           {
+                return request;
+            }
+           else {
+               return "Requires authorization header";
+           }
         }
     }
 }
