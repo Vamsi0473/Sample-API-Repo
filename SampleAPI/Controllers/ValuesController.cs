@@ -21,13 +21,13 @@ namespace SampleAPI.Controllers
         public ActionResult<string> Get(int id)
         {
              var request = Request.Headers["Authorization"];
-            if (request == "token")
-            {
-                return "Authorization header is validated";
-            }
-            else {
-                return "Requires authorization header";
-            }
+           // if (request == "token")
+           // {
+                return token;
+            //}
+           // else {
+              //  return "Requires authorization header";
+           // }
         }
     }
 }
